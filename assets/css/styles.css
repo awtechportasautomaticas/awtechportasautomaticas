@@ -318,3 +318,16 @@ section::after {
     opacity: 0.18;
     z-index: 1;
 }
+/* Garantir logo visível */
+.hero-overlay {
+    z-index: 0 !important;
+}
+
+.hero::before {
+    z-index: 1 !important;
+}
+
+/* Conteúdo por cima */
+.hero-inner {
+    z-index: 2 !important;
+}
