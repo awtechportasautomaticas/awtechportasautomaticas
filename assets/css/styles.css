@@ -254,3 +254,56 @@ section::after {
     margin: 6px 0;
     opacity: 0.8;
 }
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('../img/logoawtech.png');
+    background-size: 60%;    /* tamanho da logo no fundo */
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.35;           /* transparência da logo */
+    z-index: 1;              /* atrás do conteúdo */
+    filter: brightness(0.8);
+}
+
+/* garantir que o conteúdo fique por cima da logo */
+.hero-inner {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55); /* escurece o fundo, deixando a logo suave */
+    z-index: 2;
+}
+
+@media (max-width: 720px) {
+
+    /* Aumentar a logo no fundo */
+    .hero::before {
+        background-size: 300%;  /* maior e mais visível no mobile */
+        opacity: 0.25;          /* mais forte no mobile */
+    }
+
+    /* Ajustar alinhamento do conteúdo */
+    .hero-inner {
+        text-align: center;     /* centraliza tudo */
+        padding: 40px 0 0 0;    /* sobe o conteúdo */
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    /* Reduzir o escurecimento para deixar a logo melhor */
+    .hero-overlay {
+        background: rgba(0,0,0,0.35);
+    }
+}
