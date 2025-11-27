@@ -318,16 +318,55 @@ section::after {
     opacity: 0.18;
     z-index: 1;
 }
-/* Garantir logo visível */
-.hero-overlay {
-    z-index: 0 !important;
+
+
+.hero {
+  position: relative; /* garante contexto */
+  overflow: hidden;   /* evita overflow se a logo for grande */
 }
 
+/* Forçar que o ::before exista e tenha dimensão */
 .hero::before {
-    z-index: 1 !important;
+  content: "";
+  position: absolute;
+  inset: 0;                   /* ocupa toda a área da hero */
+  display: block;
+  pointer-events: none;       /* não atrapalha cliques */
+  z-index: 1;                 /* entre o background e o conteúdo (ajustaremos abaixo) */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;   /* garante proporcionalidade */
+  opacity: 0.22;              /* ajuste a opacidade desejada */
+  filter: blur(1px) brightness(1.05);
+
+  /* Tentativa de múltiplos caminhos — o browser usa o primeiro que carregar com sucesso */
+  /* 1) Caminho absoluto para GitHub Pages se seu site está em /test/ */
+  /* 2) Caminho relativo padrão (do CSS) */
+  /* 3) Caminho subindo um nível — caso seu CSS esteja em pasta assets/css/ */
+  background-image:
+    url("/test/assets/img/logoawtech.png"),
+    url("assets/img/logoawtech.png"),
+    url("../assets/img/logoawtech.png");
+  /* Caso seu repositório tenha outro nome, substitua /test/ pelo nome do repositório */
 }
 
-/* Conteúdo por cima */
+/* Garantir que o overlay não fique acima da logo (temporário) */
+.hero-overlay {
+  background: rgba(0,0,0,0.30) !important; /* menos opaco para teste */
+  z-index: 0 !important;
+}
+
+/* Conteúdo acima da logo */
 .hero-inner {
-    z-index: 2 !important;
+  z-index: 2 !important;
+}
+
+/* DEBUG VISUAL: borda temporária para ver onde o ::before está */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px dashed rgba(255,255,255,0.03);
+  pointer-events: none;
+  z-index: 5;
 }
