@@ -382,3 +382,27 @@ section::after {
 .page-hero p {
     opacity: 0.8;
 }
+.video-section h2 {
+    text-align: center;
+}
+
+.video-section .sub {
+    text-align: center;
+    opacity: 0.8;
+    margin-bottom: 18px;
+}
+
+.video-box {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.video-box video {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
