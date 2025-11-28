@@ -16,39 +16,43 @@
 .mobile-menu a.wh{background:transparent; border:1px solid rgba(255,255,255,0.06); color:white; padding:10px 14px; text-align:center}
 
 .hero {
-    position: relative;
-    min-height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 72px;
-    background: radial-gradient(circle at center,
-        rgba(10, 40, 80, 0.55) 0%,
-        rgba(5, 20, 40, 0.95) 60%,
-        #031018 100%
-    );
-    overflow: hidden;
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 72px;
+  background: none; /* remove background direto */
+  overflow: hidden;
 }
 
+/* fundo da hero — imagem ou logo de fundo */
 .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("../img/fundo-awtech.jpg");
-    background-size: 60%;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.22;
-    z-index: 1;
-    filter: blur(1px) brightness(1.05);
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/fundo-awtech.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.15; /* ajuste conforme preferir */
+  filter: brightness(0.9);
+  z-index: 1;
 }
 
-/* Overlay suave */
+/* overlay escuro sobre fundo — mas abaixo do conteúdo */
 .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: 2;
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 2;
+}
+
+/* conteúdo da hero — sempre visível por cima */
+.hero-inner {
+  position: relative;
+  z-index: 3;
+  text-align: center;
 }
 
 /* Conteúdo */
@@ -253,18 +257,6 @@ section::after {
     margin: 6px 0;
     opacity: 0.8;
 }
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("../img/fundo-awtech.jpg");
-    background-size: 60%;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.22;
-    z-index: 1;
-    filter: blur(1px) brightness(1.05);
-}
 
 /* garantir que o conteúdo fique por cima da logo */
 .hero-inner {
@@ -272,12 +264,6 @@ section::after {
     z-index: 3;
 }
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.55); /* escurece o fundo, deixando a logo suave */
-    z-index: 2;
-}
 
 @media (max-width: 720px) {
 
@@ -309,18 +295,7 @@ section::after {
 
 
 
-.hero {
-  position: relative; /* garante contexto */
-  overflow: hidden;   /* evita overflow se a logo for grande */
-}
 
-/* Forçar que o ::before exista e tenha dimensão */
-
-/* Garantir que o overlay não fique acima da logo (temporário) */
-.hero-overlay {
-  background: rgba(0,0,0,0.30) !important; /* menos opaco para teste */
-  z-index: 0 !important;
-}
 
 /* Conteúdo acima da logo */
 .hero-inner {
