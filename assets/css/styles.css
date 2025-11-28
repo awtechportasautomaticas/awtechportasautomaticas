@@ -370,74 +370,58 @@ section::after {
   pointer-events: none;
   z-index: 5;
 }
-.social-links {
-    margin-bottom: 14px;
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-}
 
-.social-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 8px 14px;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.06);
-    transition: 0.3s;
-}
 .social-round {
     display: flex;
     justify-content: center;
-    gap: 18px;
+    gap: 12px;
     margin: 20px 0;
     flex-wrap: wrap;
 }
 
+/* Botões menores */
 .social-round a {
-    width: 55px;
-    height: 55px;
-    background: #111;
+    width: 40px;     /* antes era 55px */
+    height: 40px;    /* antes era 55px */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-decoration: none;
-    font-size: 20px;
-    transition: 0.3s;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    padding: 0;
+    transition: 0.25s;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
 }
 
-/* Ícones SVG */
+/* Ícones SVG menores */
 .social-round svg {
-    width: 28px;
-    height: 28px;
+    width: 20px;   /* antes era 28px */
+    height: 20px;
 }
 
-/* 🎨 INSTAGRAM — gradiente oficial */
+/* Instagram gradiente oficial */
 .social-round .instagram {
     background: radial-gradient(circle at 30% 30%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 100%);
 }
 
-/* 🔵 FACEBOOK */
+/* Facebook */
 .social-round .facebook {
     background: #1877F2;
 }
 
-/* 🟢 WHATSAPP */
+/* WhatsApp */
 .social-round .whatsapp {
     background: #25D366;
 }
 
-/* ✉️ EMAIL */
+/* E-mail */
 .social-round .email {
     background: #444;
 }
 
-/* Hover animado */
+/* Hover */
 .social-round a:hover {
-    transform: scale(1.13);
-    box-shadow: 0 0 15px rgba(0,120,255,0.7);
+    transform: scale(1.12);
+    box-shadow: 0 0 10px rgba(0,120,255,0.5);
 }
