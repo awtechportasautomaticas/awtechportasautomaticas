@@ -270,30 +270,24 @@ section::after {
 
 
 @media (max-width: 720px) {
-
-    /* Aumentar a logo no fundo */
     .hero::before {
-        background-size: 1000%;  /* maior e mais visível no mobile */
-        opacity: 0.25;          /* mais forte no mobile */
+        background-size: 260px;  /* TAMANHO PERFEITO */
+        opacity: 0.22;
+        background-position: center top;
+        filter: brightness(1.05);
     }
 
-    /* Ajustar alinhamento do conteúdo */
     .hero-inner {
-        text-align: center;     /* centraliza tudo */
-        padding: 40px 0 0 0;    /* sobe o conteúdo */
+        text-align: center;
+        padding-top: 40px;
     }
 
     .hero h1 {
         font-size: 2.4rem;
     }
 
-    .lead {
+    .hero .lead {
         font-size: 1rem;
-    }
-
-    /* Reduzir o escurecimento para deixar a logo melhor */
-    .hero-overlay {
-        background: rgba(0,0,0,0.35);
     }
 }
 
