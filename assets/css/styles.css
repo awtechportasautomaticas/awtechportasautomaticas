@@ -273,7 +273,7 @@ section::after {
     .hero::before {
         background-size: 400px;  /* TAMANHO PERFEITO */
         opacity: 0.22;
-        background-position: center top;
+        background-position: center;
         filter: brightness(1.05);
     }
 
