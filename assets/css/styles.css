@@ -414,3 +414,6 @@ section::after {
     margin-top: 60px;
   }
 }
+.hero-inner .btn:first-of-type {
+  margin-top: 60px;
+}
