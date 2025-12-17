@@ -35,7 +35,7 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.9; /* ajuste conforme preferir */
+  opacity: 1; /* ajuste conforme preferir */
   filter: brightness(0.9);
   z-index: 1;
 }
@@ -272,7 +272,7 @@ section::after {
 @media (max-width: 720px) {
     .hero::before {
         background-size: 600px;  /* TAMANHO PERFEITO */
-        opacity: 0.9;
+        opacity: 1;
         background-position: center;
         filter: brightness(1.05);
     }
@@ -408,12 +408,3 @@ section::after {
 .hero {
     position: relative;
     overflow: hidden;
-}
-@media (max-width: 720px) {
-  .hero-inner .btn {
-    margin-top: 60px;
-  }
-}
-.hero-inner .btn:first-of-type {
-  margin-top: 60px;
-}
