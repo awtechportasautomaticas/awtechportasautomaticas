@@ -90,7 +90,7 @@
         min-height: 65vh;
     }
     .hero::before {
-        background-size: 230%;
+        background-size: 400%;
         opacity: 0.5;
     }
     .hero h1 {
