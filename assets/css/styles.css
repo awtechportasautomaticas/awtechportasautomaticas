@@ -409,4 +409,8 @@ section::after {
     position: relative;
     overflow: hidden;
 }
-
+@media (max-width: 720px) {
+  .hero-inner .btn {
+    margin-top: 60px;
+  }
+}
